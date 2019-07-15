@@ -564,6 +564,7 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel2">
 <li><a href="#_to_circuit_2">5.1. To circuit</a></li>
 <li><a href="#_programming_2">5.2. Programming</a></li>
+<li><a href="#_references">5.3. References</a></li>
 </ul>
 </li>
 <li><a href="#_add_turbine">6. Add Turbine</a>
@@ -580,6 +581,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_parallel">7.1.2. Parallel</a></li>
 </ul>
 </li>
+<li><a href="#_voltage_divider">7.2. Voltage divider</a></li>
 </ul>
 </li>
 </ul>
@@ -743,16 +745,124 @@ and to avoid any leakage, I&#8217;ve used teflon to reinforce pipe ends.</p>
 <div class="sect1">
 <h2 id="_add_flow_meter">5. Add Flow Meter</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m using a water flow sensor YF-S201.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/flow_meter_detail.jpg" alt="flow meter detail" width="400">
+</div>
+</div>
 <div class="sect2">
 <h3 id="_to_circuit_2">5.1. To circuit</h3>
 <div class="paragraph">
-<p>TODO</p>
+<p>The flow meter has three wires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>red</strong>: for powering the flow meter.  It needs 5v which is
+going to be supplied by the 5v pin from the Arduino Uno.</p>
+</li>
+<li>
+<p><strong>black</strong>: which represents the ground, it will be linked to
+the ground pin of the Arduino.</p>
+</li>
+<li>
+<p><strong>yellow</strong>: sends data from the flow meter to the digital pin 1
+of the Arduino.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/flow_meter_schema.jpg" alt="flow meter schema" width="500">
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_programming_2">5.2. Programming</h3>
-<div class="paragraph">
-<p>TODO</p>
+<div class="listingblock">
+<div class="title">FlowMeter.ino</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cpp"><span class="comment">/* Copyright [yyyy] [name of copyright owner]
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</span>
+
+<span class="comment">// Measuring the rising edges of the signal</span>
+<span class="directive">volatile</span> <span class="predefined-type">int</span> NbTopsFan;
+
+<span class="predefined-type">int</span> result;
+
+<span class="comment">// The pin location of the sensor</span>
+<span class="predefined-type">int</span> hallsensor = <span class="integer">2</span>;
+
+<span class="comment">/*
+ * This is the function that the interupt calls
+ */</span>
+<span class="directive">void</span> rpm ()
+{
+    <span class="comment">// Measure the rising and falling edge of the hall effect sensors</span>
+    <span class="comment">// signal</span>
+    NbTopsFan++;
+}
+
+<span class="directive">void</span> readFlowMeter()
+{
+ NbTopsFan = <span class="integer">0</span>;        <span class="comment">// Set NbTops to 0 ready for calculations</span>
+ sei();                <span class="comment">// Enables interrupts</span>
+ delay (<span class="integer">1000</span>);         <span class="comment">// Wait 1 second</span>
+ cli();                <span class="comment">// Disable interrupts</span>
+ result = (NbTopsFan * <span class="integer">60</span> / <span class="float">7</span><span class="float">.5</span>); <span class="comment">// (Pulse frequency x 60) / 7.5Q, = flow rate in L/hour</span>
+
+ Serial.print (result, DEC); <span class="comment">// Prints the number calculated above</span>
+ Serial.print (<span class="string"><span class="delimiter">&quot;</span><span class="content"> L/hour</span><span class="char">\r</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>); <span class="comment">// Prints &quot;L/hour&quot; and returns a  new line</span>
+}
+
+<span class="comment">/*
+ * Runs once, when the sketch starts
+ */</span>
+<span class="directive">void</span> setup() <span class="comment">//</span>
+{
+ pinMode(hallsensor, INPUT); <span class="comment">// Initializes digital pin 2 as an input</span>
+ Serial.begin(<span class="integer">9600</span>);         <span class="comment">// This is the setup function where the serial port is initialised,</span>
+
+ attachInterrupt(<span class="integer">0</span>, rpm, RISING); <span class="comment">//and the interrupt is attached</span>
+}
+
+<span class="comment">/*
+ * the loop() method runs over and over again,
+ * as long as the Arduino has power
+ */</span>
+<span class="directive">void</span> loop ()
+{
+    readFlowMeter();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">5.3. References</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.instructables.com/id/How-to-Use-Water-Flow-Sensor-Arduino-Tutorial/" class="bare">https://www.instructables.com/id/How-to-Use-Water-Flow-Sensor-Arduino-Tutorial/</a></p>
+</li>
+<li>
+<p><a href="http://www.arduinotutorialonline.com/2018/07/best-arduino-flow-rate-sensor-tutorial.html" class="bare">http://www.arduinotutorialonline.com/2018/07/best-arduino-flow-rate-sensor-tutorial.html</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -760,10 +870,47 @@ and to avoid any leakage, I&#8217;ve used teflon to reinforce pipe ends.</p>
 <div class="sect1">
 <h2 id="_add_turbine">6. Add Turbine</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m using a GOSO F50 - 12V as a water turbine producing around 12v at
+most.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/turbine_detail.jpg" alt="turbine detail" width="400">
+</div>
+</div>
 <div class="sect2">
 <h3 id="_to_circuit_3">6.1. To circuit</h3>
 <div class="paragraph">
-<p>TODO</p>
+<p>The turbine only has two wires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>red</strong>: positive</p>
+</li>
+<li>
+<p><strong>black</strong>: ground</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Because the Arduino Uno only can measure voltages of 5v top we need to
+create a <code>voltage divider</code> in order to measure voltages coming from
+the turbine.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Don&#8217;t try to measure higher voltages than 5v directly in the
+Arduino or your Arduino could be damaged.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -790,6 +937,28 @@ battery sources of 9v and 3v. I needed to add them up, at least as a
 temporary solution. There&#8217;re two ways of adding up batteries, serial
 or parallel.</p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Batteries do BOOM!</div>
+<div class="paragraph">
+<p>While trying to experiment with batteries at home, accidentally I
+short-circuited the batteries and a couple of them exploded, spilling
+everything they had out. I tell you, it&#8217;s not a nice experience, so I
+thought it would be a good idea to warn you about unwanted outcomings.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check your schema is not producing a short-circuit</p>
+</li>
+<li>
+<p>Make sure the positive and the negative of the batteries are far
+enough from each other</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_serial">7.1.1. Serial</h4>
 <div class="paragraph">
@@ -803,13 +972,19 @@ or parallel.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_voltage_divider">7.2. Voltage divider</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2019-07-15 14:59:00 +0200
+Last updated 2019-07-15 23:30:22 +0200
 </div>
 </div>
 <script type="text/x-mathjax-config">
