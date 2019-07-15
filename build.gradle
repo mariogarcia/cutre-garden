@@ -22,5 +22,9 @@ gitPublish {
     repoUri = 'git@github.com:mariogarcia/cutre-garden.git'
     branch  = 'gh-pages'
 
+    contents {
+        from 'build/docs/asciidoc'
+    }
+
     commitMessage = 'Updating project documentation automatically'
 }
