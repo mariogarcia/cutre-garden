@@ -28,3 +28,9 @@ gitPublish {
 
     commitMessage = 'Updating project documentation automatically'
 }
+
+/**
+ * The documentation should be generated again before publishing
+ * anything to gh-pages
+ */
+gitPublishPush.dependsOn('asciidoc')
