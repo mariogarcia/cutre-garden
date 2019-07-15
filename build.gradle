@@ -18,6 +18,7 @@ asciidoctor {
     attributes(toc: 'right', 'source-highlighter': 'coderay', toclevels: '5')
 }
 
+// publish to github
 gitPublish {
     repoUri = 'git@github.com:mariogarcia/cutre-garden.git'
     branch  = 'gh-pages'
