@@ -1,29 +1,35 @@
-== Parts
+== Parts and Tools
+
+=== Parts
 
 - 1 Arduino Uno
 - 1 Water Flow meter
 - 1 Water Turbine
 - 1 Solenoid Valve
 
-=== Electronics
+==== Electronics
 
-==== Arduino
-
-TODO
-
-==== Flow Meter
+===== Arduino
 
 TODO
 
-==== Water Turbine
+===== Flow Meter
 
 TODO
 
-==== Solenoid Valve
+===== Water Turbine
 
 TODO
 
-=== Plumbing
+===== Solenoid Valve
+
+TODO
+
+==== Plumbing
 
 - 1 water flexible hose 1/2 - 1/2 (15 cm)
 - 1 water flexible hose 1/2 - 1/2 (50 cm)
+
+=== Tools
+
+- Multimeter
