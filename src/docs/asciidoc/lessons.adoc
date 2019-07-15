@@ -11,10 +11,28 @@ battery sources of 9v and 3v. I needed to add them up, at least as a
 temporary solution. There're two ways of adding up batteries, serial
 or parallel.
 
+[sidebar]
+.Batteries do BOOM!
+--
+While trying to experiment with batteries at home, accidentally I
+short-circuited the batteries and a couple of them exploded, spilling
+everything they had out. I tell you, it's not a nice experience, so I
+thought it would be a good idea to warn you about unwanted outcomings.
+
+- Check your schema is not producing a short-circuit
+- Make sure the positive and the negative of the batteries are far
+  enough from each other
+
+--
+
 ==== Serial
 
 TODO
 
 ==== Parallel
+
+TODO
+
+=== Voltage divider
 
 TODO

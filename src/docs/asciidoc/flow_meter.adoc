@@ -1,9 +1,31 @@
 == Add Flow Meter
 
+I'm using a water flow sensor YF-S201.
+
+image::flow_meter_detail.jpg[width=400]
+
 === To circuit
 
-TODO
+The flow meter has three wires:
+
+- **red**: for powering the flow meter.  It needs 5v which is
+going to be supplied by the 5v pin from the Arduino Uno.
+- **black**: which represents the ground, it will be linked to
+the ground pin of the Arduino.
+- **yellow**: sends data from the flow meter to the digital pin 1
+of the Arduino.
+
+image::flow_meter_schema.jpg[width=500]
 
 === Programming
 
-TODO
+[source, cpp]
+.FlowMeter.ino
+----
+include::{code}/FlowMeter/FlowMeter.ino[]
+----
+
+=== References
+
+- https://www.instructables.com/id/How-to-Use-Water-Flow-Sensor-Arduino-Tutorial/
+- http://www.arduinotutorialonline.com/2018/07/best-arduino-flow-rate-sensor-tutorial.html

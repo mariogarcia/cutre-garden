@@ -1,8 +1,23 @@
 == Add Turbine
 
+I'm using a GOSO F50 - 12V as a water turbine producing around 12v at
+most.
+
+image::turbine_detail.jpg[width=400]
+
 === To circuit
 
-TODO
+The turbine only has two wires:
+
+- **red**: positive
+- **black**: ground
+
+Because the Arduino Uno only can measure voltages of 5v top we need to
+create a `voltage divider` in order to measure voltages coming from
+the turbine.
+
+WARNING: Don't try to measure higher voltages than 5v directly in the
+Arduino or your Arduino could be damaged.
 
 === Programming
 

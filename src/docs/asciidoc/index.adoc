@@ -3,14 +3,7 @@
 :numbered:
 :imagesDir: images/
 :stem:
-:app: {gradle-rootdir}/iss-app
-:itests: {gradle-rootdir}/iss-app-itests
-:tpv:  {gradle-rootdir}/iss-tpvs
-:utils: {gradle-rootdir}/iss-utils
-:docker: {gradle-rootdir}/docker
-:users-service: {gradle-rootdir}/iss-users-service
-:users-rest: {gradle-rootdir}/iss-users-rest
-:ansible: {gradle-rootdir}/ansible
+:code: {gradle-rootdir}/src/main/cpp
 
 [quote, Richard Stallman]
 Something in the air
