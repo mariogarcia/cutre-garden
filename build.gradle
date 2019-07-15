@@ -1,5 +1,6 @@
 plugins {
     id 'org.asciidoctor.jvm.convert' version '2.2.0'
+    id 'org.ajoberstar.git-publish' version '2.1.1'
 }
 
 version = "1.0.0"
@@ -15,4 +16,11 @@ asciidoctor {
     }
 
     attributes(toc: 'right', 'source-highlighter': 'coderay', toclevels: '5')
+}
+
+gitPublish {
+    repoUri = 'git@github.com:mariogarcia/cutre-garden.git'
+    branch  = 'gh-pages'
+
+    commitMessage = 'Updating project documentation automatically'
 }
