@@ -1,0 +1,28 @@
+= Cutre Garden
+:revnumber: {revnumber}
+:numbered:
+:imagesDir: images/
+:stem:
+:app: {gradle-rootdir}/iss-app
+:itests: {gradle-rootdir}/iss-app-itests
+:tpv:  {gradle-rootdir}/iss-tpvs
+:utils: {gradle-rootdir}/iss-utils
+:docker: {gradle-rootdir}/docker
+:users-service: {gradle-rootdir}/iss-users-service
+:users-rest: {gradle-rootdir}/iss-users-rest
+:ansible: {gradle-rootdir}/ansible
+
+[quote, Richard Stallman]
+Something in the air
+
+include::{includedir}/what.adoc[]
+
+include::{includedir}/parts.adoc[]
+
+include::{includedir}/schematics.adoc[]
+
+include::{includedir}/valve.adoc[]
+
+include::{includedir}/flow_meter.adoc[]
+
+include::{includedir}/turbine.adoc[]

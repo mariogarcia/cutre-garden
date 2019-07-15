@@ -1,0 +1,18 @@
+plugins {
+    id 'org.asciidoctor.jvm.convert' version '2.2.0'
+}
+
+version = "1.0.0"
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+asciidoctor {
+    sources {
+        include 'index.adoc'
+    }
+
+    attributes(toc: 'right', 'source-highlighter': 'coderay', toclevels: '5')
+}
