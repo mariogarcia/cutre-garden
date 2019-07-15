@@ -531,20 +531,29 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_what_is_cutre_garden">1. What is Cutre Garden ?</a></li>
-<li><a href="#_parts">2. Parts</a>
+<li><a href="#_parts_and_tools">2. Parts and Tools</a>
 <ul class="sectlevel2">
-<li><a href="#_electronics">2.1. Electronics</a>
+<li><a href="#_parts">2.1. Parts</a>
 <ul class="sectlevel3">
-<li><a href="#_arduino">2.1.1. Arduino</a></li>
-<li><a href="#_flow_meter">2.1.2. Flow Meter</a></li>
-<li><a href="#_water_turbine">2.1.3. Water Turbine</a></li>
-<li><a href="#_solenoid_valve">2.1.4. Solenoid Valve</a></li>
+<li><a href="#_electronics">2.1.1. Electronics</a>
+<ul class="sectlevel4">
+<li><a href="#_arduino">Arduino</a></li>
+<li><a href="#_flow_meter">Flow Meter</a></li>
+<li><a href="#_water_turbine">Water Turbine</a></li>
+<li><a href="#_solenoid_valve">Solenoid Valve</a></li>
 </ul>
 </li>
-<li><a href="#_plumbing">2.2. Plumbing</a></li>
+<li><a href="#_plumbing">2.1.2. Plumbing</a></li>
 </ul>
 </li>
-<li><a href="#_schematics">3. Schematics</a></li>
+<li><a href="#_tools">2.2. Tools</a></li>
+</ul>
+</li>
+<li><a href="#_schematics">3. Schematics</a>
+<ul class="sectlevel2">
+<li><a href="#_initial_layout">3.1. Initial layout</a></li>
+</ul>
+</li>
 <li><a href="#_add_valve">4. Add Valve</a>
 <ul class="sectlevel2">
 <li><a href="#_to_circuit">4.1. To circuit</a></li>
@@ -590,8 +599,10 @@ is to build an automated garden water supply.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_parts">2. Parts</h2>
+<h2 id="_parts_and_tools">2. Parts and Tools</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_parts">2.1. Parts</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -606,37 +617,40 @@ is to build an automated garden water supply.</p>
 <li>
 <p>1 Solenoid Valve</p>
 </li>
+<li>
+<p>8 AA batteries (12V)</p>
+</li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_electronics">2.1. Electronics</h3>
 <div class="sect3">
-<h4 id="_arduino">2.1.1. Arduino</h4>
+<h4 id="_electronics">2.1.1. Electronics</h4>
+<div class="sect4">
+<h5 id="_arduino">Arduino</h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_flow_meter">2.1.2. Flow Meter</h4>
+<div class="sect4">
+<h5 id="_flow_meter">Flow Meter</h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_water_turbine">2.1.3. Water Turbine</h4>
+<div class="sect4">
+<h5 id="_water_turbine">Water Turbine</h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_solenoid_valve">2.1.4. Solenoid Valve</h4>
+<div class="sect4">
+<h5 id="_solenoid_valve">Solenoid Valve</h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_plumbing">2.2. Plumbing</h3>
+<div class="sect3">
+<h4 id="_plumbing">2.1.2. Plumbing</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -649,12 +663,53 @@ is to build an automated garden water supply.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_tools">2.2. Tools</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Multimeter</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_schematics">3. Schematics</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_initial_layout">3.1. Initial layout</h3>
 <div class="paragraph">
-<p>TODO</p>
+<p>The general layout of the water flow is the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/parts_w_plumbing_01.jpg" alt="parts w plumbing 01">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The water intake through the solenoid valve</p>
+</li>
+<li>
+<p>Passes through the water flow meter</p>
+</li>
+<li>
+<p>And finally the water passes through the turbine producing some power</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to connect the main project components I&#8217;ve used plumbing flexible hoses
+and to avoid any leakage, I&#8217;ve used teflon to reinforce pipe ends.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/parts_teflon.jpg" alt="parts teflon" width="400">
+</div>
+</div>
 </div>
 </div>
 </div>
