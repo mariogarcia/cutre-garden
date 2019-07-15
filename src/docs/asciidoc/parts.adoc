@@ -6,6 +6,7 @@
 - 1 Water Flow meter
 - 1 Water Turbine
 - 1 Solenoid Valve
+- 8 AA batteries (12V)
 
 ==== Electronics
 
