@@ -1,5 +1,0 @@
-== What is Cutre Garden ?
-
-Cutre Garden is a pet project to practice a little bit of
-electronics during the Kaleidos Piweek. Its main objective
-is to build an automated garden water supply.

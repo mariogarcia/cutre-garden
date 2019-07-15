@@ -1,9 +1,0 @@
-== Add Valve
-
-=== To circuit
-
-TODO
-
-=== Programming
-
-TODO
