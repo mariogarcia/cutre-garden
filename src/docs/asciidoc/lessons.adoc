@@ -1,0 +1,20 @@
+== Lessons learned
+
+This chapter is where I'm adding everything I've learned in the
+process of building the project and doesn't fit in any of the previous
+chapters.
+
+=== Adding up batteries voltage
+
+In this project I needed a power source of 12v, but I only had two
+battery sources of 9v and 3v. I needed to add them up, at least as a
+temporary solution. There're two ways of adding up batteries, serial
+or parallel.
+
+==== Serial
+
+TODO
+
+==== Parallel
+
+TODO

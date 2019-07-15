@@ -26,3 +26,5 @@ include::{includedir}/valve.adoc[]
 include::{includedir}/flow_meter.adoc[]
 
 include::{includedir}/turbine.adoc[]
+
+include::{includedir}/lessons.adoc[]
