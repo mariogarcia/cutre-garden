@@ -29,7 +29,7 @@ Arduino or your Arduino could be damaged.
 
 Basically I've joined two resistors of `1M` and `100K` in series and I
 take the measure in the middle of them. In the following schema think
-of the battery as if it was the turbine producing electricity:
+of the battery as if it was the turbine producing electricity:z
 
 image::voltage_divider.jpg[width=500]
 
@@ -51,3 +51,7 @@ include::{code}/VoltageMeter/VoltageMeter.ino[]
 <4> Calculating voltage
 <5> Showing voltage at the console
 <6> Waiting 1 sec until next read
+
+=== References
+
+- https://www.youtube.com/watch?v=G1I-fcQFvNE[Measuring voltage using Arduino (Youtube)]

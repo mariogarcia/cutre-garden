@@ -52,3 +52,9 @@ Check out the references for theory and more information.
 - https://www.youtube.com/watch?v=G1I-fcQFvNE[Measuring voltage with Arduino (Youtube)]
 - https://www.electroschematics.com/9351/arduino-digital-voltmeter/[Arduino Digital Voltimeter with LCD]
 - https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/[Measuring DC voltage with Arduino]
+
+=== Fritzing IDE
+
+==== Parts
+
+- https://github.com/adafruit/Fritzing-Library

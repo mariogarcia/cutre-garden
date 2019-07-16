@@ -15,7 +15,7 @@
 
 #define cellPin A1 // <1>
 
-const float mvc = 4.54; // This is a correction constant
+const float mvc = 2.5; // This is a correction constant
 
 float counts = 0;
 float mv = 0;
