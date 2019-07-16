@@ -581,7 +581,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_parallel">7.1.2. Parallel</a></li>
 </ul>
 </li>
-<li><a href="#_voltage_divider">7.2. Voltage divider</a></li>
+<li><a href="#_voltage_divider">7.2. Voltage divider</a>
+<ul class="sectlevel3">
+<li><a href="#_references_2">7.2.1. References</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -879,6 +883,16 @@ most.</p>
 <img src="images/turbine_detail.jpg" alt="turbine detail" width="400">
 </div>
 </div>
+<div class="paragraph">
+<p>You can check how the turbine generates power by blowing following the
+direction of the flow and checking with the multimeter. There is an
+arrow indicating the direction of the flow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/turbine_only_multimeter.jpg" alt="turbine only multimeter" width="400">
+</div>
+</div>
 <div class="sect2">
 <h3 id="_to_circuit_3">6.1. To circuit</h3>
 <div class="paragraph">
@@ -899,6 +913,11 @@ most.</p>
 create a <code>voltage divider</code> in order to measure voltages coming from
 the turbine.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/turbine_voltage_divider.jpg" alt="turbine voltage divider" width="400">
+</div>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -912,11 +931,82 @@ Arduino or your Arduino could be damaged.
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Basically I&#8217;ve joined two resistors of <code>1M</code> and <code>100K</code> in series and I
+take the measure in the middle of them. In the following schema think
+of the battery as if it was the turbine producing electricity:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/voltage_divider.jpg" alt="voltage divider" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Positive of the turbine (red wire) to one end, the ground to the
+other. Then the yellow wire from the middle of both resistors to the
+arduino analog input 2 (A2), and finally connect the ground from the
+breadboard to the Arduino ground pin.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_programming_3">6.2. Programming</h3>
-<div class="paragraph">
-<p>TODO</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cpp"><span class="comment">/* Copyright [yyyy] [name of copyright owner]
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</span>
+
+<span class="preprocessor">#define</span> cellPin A1 // <b class="conum">(1)</b>
+
+<span class="directive">const</span> <span class="predefined-type">float</span> mvc = <span class="float">4</span><span class="float">.54</span>; <span class="comment">// This is a correction constant</span>
+
+<span class="predefined-type">float</span> counts = <span class="integer">0</span>;
+<span class="predefined-type">float</span> mv = <span class="integer">0</span>;
+
+<span class="directive">void</span> setup() {
+    Serial.begin(<span class="integer">115200</span>); // <b class="conum">(2)</b>
+}
+
+<span class="directive">void</span> loop() {
+    counts = analogRead(cellPin);     // <b class="conum">(3)</b>
+    mv = ((counts * mvc) / <span class="integer">1000</span>) * <span class="integer">2</span>; // <b class="conum">(4)</b>
+    Serial.println(String(mv));       // <b class="conum">(5)</b>
+    delay(<span class="integer">1000</span>);                      // <b class="conum">(6)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Reading from A1 (Analog input 1)</p>
+</li>
+<li>
+<p>Reading with frequency rate of 115200</p>
+</li>
+<li>
+<p>Reading data from analog input</p>
+</li>
+<li>
+<p>Calculating voltage</p>
+</li>
+<li>
+<p>Showing voltage at the console</p>
+</li>
+<li>
+<p>Waiting 1 sec until next read</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -975,7 +1065,38 @@ enough from each other</p>
 <div class="sect2">
 <h3 id="_voltage_divider">7.2. Voltage divider</h3>
 <div class="paragraph">
-<p>TODO</p>
+<p>When measuring voltage with your Arduino, you have to be careful not
+trying to measure voltages greater than 5v or you&#8217;ll ruin your analog
+pin.</p>
+</div>
+<div class="paragraph">
+<p>In order to avoid that, you can apply a voltage divider which is basically
+putting the message in the middle of two resistors serially joined, like
+the schema:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/voltage_divider.jpg" alt="voltage divider" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Check out the references for theory and more information.</p>
+</div>
+<div class="sect3">
+<h4 id="_references_2">7.2.1. References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=G1I-fcQFvNE">Measuring voltage with Arduino (Youtube)</a></p>
+</li>
+<li>
+<p><a href="https://www.electroschematics.com/9351/arduino-digital-voltmeter/">Arduino Digital Voltimeter with LCD</a></p>
+</li>
+<li>
+<p><a href="https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/">Measuring DC voltage with Arduino</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
