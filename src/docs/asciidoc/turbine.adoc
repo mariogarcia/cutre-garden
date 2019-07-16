@@ -5,6 +5,12 @@ most.
 
 image::turbine_detail.jpg[width=400]
 
+You can check how the turbine generates power by blowing following the
+direction of the flow and checking with the multimeter. There is an
+arrow indicating the direction of the flow.
+
+image::turbine_only_multimeter.jpg[width=400]
+
 === To circuit
 
 The turbine only has two wires:
@@ -16,9 +22,32 @@ Because the Arduino Uno only can measure voltages of 5v top we need to
 create a `voltage divider` in order to measure voltages coming from
 the turbine.
 
+image::turbine_voltage_divider.jpg[width=400]
+
 WARNING: Don't try to measure higher voltages than 5v directly in the
 Arduino or your Arduino could be damaged.
 
+Basically I've joined two resistors of `1M` and `100K` in series and I
+take the measure in the middle of them. In the following schema think
+of the battery as if it was the turbine producing electricity:
+
+image::voltage_divider.jpg[width=500]
+
+Positive of the turbine (red wire) to one end, the ground to the
+other. Then the yellow wire from the middle of both resistors to the
+arduino analog input 2 (A2), and finally connect the ground from the
+breadboard to the Arduino ground pin.
+
 === Programming
 
-TODO
+[source, cpp]
+----
+include::{code}/VoltageMeter/VoltageMeter.ino[]
+----
+
+<1> Reading from A1 (Analog input 1)
+<2> Reading with frequency rate of 115200
+<3> Reading data from analog input
+<4> Calculating voltage
+<5> Showing voltage at the console
+<6> Waiting 1 sec until next read

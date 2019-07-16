@@ -35,4 +35,20 @@ TODO
 
 === Voltage divider
 
-TODO
+When measuring voltage with your Arduino, you have to be careful not
+trying to measure voltages greater than 5v or you'll ruin your analog
+pin.
+
+In order to avoid that, you can apply a voltage divider which is basically
+putting the message in the middle of two resistors serially joined, like
+the schema:
+
+image::voltage_divider.jpg[width=500]
+
+Check out the references for theory and more information.
+
+==== References
+
+- https://www.youtube.com/watch?v=G1I-fcQFvNE[Measuring voltage with Arduino (Youtube)]
+- https://www.electroschematics.com/9351/arduino-digital-voltmeter/[Arduino Digital Voltimeter with LCD]
+- https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/[Measuring DC voltage with Arduino]
