@@ -2,14 +2,15 @@
 
 Cutre Garden is a project born in the Kalieods PIWEEK on July
 2019. Its purpose was to practice a little bit of electronics to build
-an automated garden water supply **from scratch**.
+an automated garden water supply **from scratch** and **with no
+initial schema**.
 
 === Main goals
 
 Build an automated watering system with the following characteristics:
 
 - Only one power source
-- To be fully autonomous
+- To be fully autonomous using a water turbine
 - To respond to humidity sensors
 - To have a water proof circuitery
 - To be remotely accessed
@@ -22,13 +23,17 @@ several mistakes (a couple of booms included :P) but I'm confident I
 can do this with a little bit more time.
 
 - Every component is assembled and functional separately
-- Only one power source
+- Only one power source (12v for relay and 5v for Arduino Uno)
+- Solenoid valve works fine thanks to the relay
+- Turbine produces electricity and sends data to arduino (still some adjustments needed)
+- Water flow meter measures water flow (still some adjustments needed)
 
 === Next steps
 
 - Change standard battery solution to a Lithium based solution with a
 battery charger powered by the turbine while watering.
 
+- Adjust sensor reading values
 - Add autonomous timer
 - Isolate the circuitery
 - Box the whole solution
