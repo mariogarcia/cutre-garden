@@ -642,7 +642,8 @@ Read more at <a href="https://www.brainyquote.com/topics/technology" class="bare
 <div class="paragraph">
 <p>Cutre Garden is a project born in the Kalieods PIWEEK on July
 2019. Its purpose was to practice a little bit of electronics to build
-an automated garden water supply <strong>from scratch</strong>.</p>
+an automated garden water supply <strong>from scratch</strong> and <strong>with no
+initial schema</strong>.</p>
 </div>
 <div class="sect2">
 <h3 id="_main_goals">1.1. Main goals</h3>
@@ -655,7 +656,7 @@ an automated garden water supply <strong>from scratch</strong>.</p>
 <p>Only one power source</p>
 </li>
 <li>
-<p>To be fully autonomous</p>
+<p>To be fully autonomous using a water turbine</p>
 </li>
 <li>
 <p>To respond to humidity sensors</p>
@@ -683,7 +684,16 @@ can do this with a little bit more time.</p>
 <p>Every component is assembled and functional separately</p>
 </li>
 <li>
-<p>Only one power source</p>
+<p>Only one power source (12v for relay and 5v for Arduino Uno)</p>
+</li>
+<li>
+<p>Solenoid valve works fine thanks to the relay</p>
+</li>
+<li>
+<p>Turbine produces electricity and sends data to arduino (still some adjustments needed)</p>
+</li>
+<li>
+<p>Water flow meter measures water flow (still some adjustments needed)</p>
 </li>
 </ul>
 </div>
@@ -695,6 +705,9 @@ can do this with a little bit more time.</p>
 <li>
 <p>Change standard battery solution to a Lithium based solution with a
 battery charger powered by the turbine while watering.</p>
+</li>
+<li>
+<p>Adjust sensor reading values</p>
 </li>
 <li>
 <p>Add autonomous timer</p>
