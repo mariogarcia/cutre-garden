@@ -1,0 +1,9 @@
+== Assembly
+
+=== Circuit
+
+image::assembly_friday_piweek_circuit.jpg[width=400]
+
+=== Piweek draft
+
+image::assembly_friday_piweek_all.jpg[width=500]

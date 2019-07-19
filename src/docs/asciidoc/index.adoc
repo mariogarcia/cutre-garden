@@ -5,8 +5,9 @@
 :stem:
 :code: {gradle-rootdir}/src/main/cpp
 
-[quote, Richard Stallman]
-Something in the air
+[quote, Jason Silva]
+Technology is, of course, a double edged sword. Fire can cook our food but also burn us.
+Read more at https://www.brainyquote.com/topics/technology
 
 include::{includedir}/what.adoc[]
 
@@ -19,5 +20,7 @@ include::{includedir}/valve.adoc[]
 include::{includedir}/flow_meter.adoc[]
 
 include::{includedir}/turbine.adoc[]
+
+include::{includedir}/assembly.adoc[]
 
 include::{includedir}/lessons.adoc[]

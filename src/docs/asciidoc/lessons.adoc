@@ -27,11 +27,30 @@ thought it would be a good idea to warn you about unwanted outcomings.
 
 ==== Serial
 
+
 TODO
 
 ==== Parallel
 
 TODO
+
+=== Capacitors
+
+TODO
+
+[sidebar]
+.Electrolitic capacitors do BOOM... BIG TIME!
+--
+
+image::boom_capacitors.jpg[align=center, width=200]
+
+--
+
+=== Resistors color code
+
+==== References
+
+- http://www.resistor-calculator.com/[Resistor calculator online]
 
 === Voltage divider
 
@@ -49,12 +68,31 @@ Check out the references for theory and more information.
 
 ==== References
 
+- https://en.wikipedia.org/wiki/Voltage_divider[Wikipedia]
 - https://www.youtube.com/watch?v=G1I-fcQFvNE[Measuring voltage with Arduino (Youtube)]
 - https://www.electroschematics.com/9351/arduino-digital-voltmeter/[Arduino Digital Voltimeter with LCD]
 - https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/[Measuring DC voltage with Arduino]
+- https://www.youtube.com/watch?v=h09gROzcBCQ[DC Voltage Dividers Part 2: Example with Four Resistors in Series]
 
 === Fritzing IDE
 
-==== Parts
+TODO
 
-- https://github.com/adafruit/Fritzing-Library
+==== Third party Parts
+
+TODO
+
+- https://github.com/adafruit/Fritzing-Library[Third party parts]
+
+==== References
+
+- https://fritzing.org/home/[Fritzing home page]
+- https://github.com/adafruit/Fritzing-Library[Third party parts]
+
+=== Voltage regulator
+
+TODO
+
+==== References
+
+- https://www.youtube.com/watch?v=9rE5YLrje9U[Voltage Regulator tutorial( L7805, L7809 & L7812) (Youtube)]

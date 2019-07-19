@@ -1,5 +1,35 @@
 == What is Cutre Garden ?
 
-Cutre Garden is a pet project to practice a little bit of
-electronics during the Kaleidos Piweek. Its main objective
-is to build an automated garden water supply.
+Cutre Garden is a project born in the Kalieods PIWEEK on July
+2019. Its purpose was to practice a little bit of electronics to build
+an automated garden water supply.
+
+=== Main goals
+
+Build an automated watering system with the following characteristics:
+
+- Only one power source
+- To be fully autonomous
+- To respond to humidity sensors
+- To have a water proof circuitery
+- To be remotely accessed
+
+=== Status after the Piweek (July 2019)
+
+The conclusion is that now I have a deeper understanding on how the
+different parts are going to play together. Of course I have made
+several mistakes (a couple of booms included :P) but I'm confident I
+can do this with a little bit more time.
+
+- Every component is assembled and functional separately
+- Only one power source
+
+=== Next steps
+
+- Change standard battery solution to a Lithium based solution with a
+battery charger powered by the turbine while watering.
+
+- Add autonomous timer
+- Isolate the circuitery
+- Box the whole solution
+- Add bluetooth or wifi connectivity (depending on usage)

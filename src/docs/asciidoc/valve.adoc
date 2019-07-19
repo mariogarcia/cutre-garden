@@ -13,3 +13,8 @@ image::valve_with_relay.jpg[width=500]
 ----
 include::{code}/ValveRelay/ValveRelay.ino[]
 ----
+
+=== References
+
+- http://robojax.com/learn/arduino/?vid=robojax-pushButton-on-off
+- https://www.arduino.cc/en/tutorial/button
