@@ -2,7 +2,7 @@
 
 Cutre Garden is a project born in the Kalieods PIWEEK on July
 2019. Its purpose was to practice a little bit of electronics to build
-an automated garden water supply.
+an automated garden water supply **from scratch**.
 
 === Main goals
 
