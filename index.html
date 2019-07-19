@@ -530,7 +530,13 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_what_is_cutre_garden">1. What is Cutre Garden ?</a></li>
+<li><a href="#_what_is_cutre_garden">1. What is Cutre Garden ?</a>
+<ul class="sectlevel2">
+<li><a href="#_main_goals">1.1. Main goals</a></li>
+<li><a href="#_status_after_the_piweek_july_2019">1.2. Status after the Piweek (July 2019)</a></li>
+<li><a href="#_next_steps">1.3. Next steps</a></li>
+</ul>
+</li>
 <li><a href="#_parts_and_tools">2. Parts and Tools</a>
 <ul class="sectlevel2">
 <li><a href="#_parts">2.1. Parts</a>
@@ -558,38 +564,57 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel2">
 <li><a href="#_to_circuit">4.1. To circuit</a></li>
 <li><a href="#_programming">4.2. Programming</a></li>
+<li><a href="#_references">4.3. References</a></li>
 </ul>
 </li>
 <li><a href="#_add_flow_meter">5. Add Flow Meter</a>
 <ul class="sectlevel2">
 <li><a href="#_to_circuit_2">5.1. To circuit</a></li>
 <li><a href="#_programming_2">5.2. Programming</a></li>
-<li><a href="#_references">5.3. References</a></li>
+<li><a href="#_references_2">5.3. References</a></li>
 </ul>
 </li>
 <li><a href="#_add_turbine">6. Add Turbine</a>
 <ul class="sectlevel2">
 <li><a href="#_to_circuit_3">6.1. To circuit</a></li>
 <li><a href="#_programming_3">6.2. Programming</a></li>
-<li><a href="#_references_2">6.3. References</a></li>
+<li><a href="#_references_3">6.3. References</a></li>
 </ul>
 </li>
-<li><a href="#_lessons_learned">7. Lessons learned</a>
+<li><a href="#_assembly">7. Assembly</a>
 <ul class="sectlevel2">
-<li><a href="#_adding_up_batteries_voltage">7.1. Adding up batteries voltage</a>
-<ul class="sectlevel3">
-<li><a href="#_serial">7.1.1. Serial</a></li>
-<li><a href="#_parallel">7.1.2. Parallel</a></li>
+<li><a href="#_circuit">7.1. Circuit</a></li>
+<li><a href="#_piweek_draft">7.2. Piweek draft</a></li>
 </ul>
 </li>
-<li><a href="#_voltage_divider">7.2. Voltage divider</a>
+<li><a href="#_lessons_learned">8. Lessons learned</a>
+<ul class="sectlevel2">
+<li><a href="#_adding_up_batteries_voltage">8.1. Adding up batteries voltage</a>
 <ul class="sectlevel3">
-<li><a href="#_references_3">7.2.1. References</a></li>
+<li><a href="#_serial">8.1.1. Serial</a></li>
+<li><a href="#_parallel">8.1.2. Parallel</a></li>
 </ul>
 </li>
-<li><a href="#_fritzing_ide">7.3. Fritzing IDE</a>
+<li><a href="#_capacitors">8.2. Capacitors</a></li>
+<li><a href="#_resistors_color_code">8.3. Resistors color code</a>
 <ul class="sectlevel3">
-<li><a href="#_parts_2">7.3.1. Parts</a></li>
+<li><a href="#_references_4">8.3.1. References</a></li>
+</ul>
+</li>
+<li><a href="#_voltage_divider">8.4. Voltage divider</a>
+<ul class="sectlevel3">
+<li><a href="#_references_5">8.4.1. References</a></li>
+</ul>
+</li>
+<li><a href="#_fritzing_ide">8.5. Fritzing IDE</a>
+<ul class="sectlevel3">
+<li><a href="#_third_party_parts">8.5.1. Third party Parts</a></li>
+<li><a href="#_references_6">8.5.2. References</a></li>
+</ul>
+</li>
+<li><a href="#_voltage_regulator">8.6. Voltage regulator</a>
+<ul class="sectlevel3">
+<li><a href="#_references_7">8.6.1. References</a></li>
 </ul>
 </li>
 </ul>
@@ -602,10 +627,11 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
-Something in the air
+Technology is, of course, a double edged sword. Fire can cook our food but also burn us.
+Read more at <a href="https://www.brainyquote.com/topics/technology" class="bare">https://www.brainyquote.com/topics/technology</a>
 </blockquote>
 <div class="attribution">
-&#8212; Richard Stallman
+&#8212; Jason Silva
 </div>
 </div>
 </div>
@@ -614,9 +640,76 @@ Something in the air
 <h2 id="_what_is_cutre_garden">1. What is Cutre Garden ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cutre Garden is a pet project to practice a little bit of
-electronics during the Kaleidos Piweek. Its main objective
-is to build an automated garden water supply.</p>
+<p>Cutre Garden is a project born in the Kalieods PIWEEK on July
+2019. Its purpose was to practice a little bit of electronics to build
+an automated garden water supply.</p>
+</div>
+<div class="sect2">
+<h3 id="_main_goals">1.1. Main goals</h3>
+<div class="paragraph">
+<p>Build an automated watering system with the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only one power source</p>
+</li>
+<li>
+<p>To be fully autonomous</p>
+</li>
+<li>
+<p>To respond to humidity sensors</p>
+</li>
+<li>
+<p>To have a water proof circuitery</p>
+</li>
+<li>
+<p>To be remotely accessed</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_status_after_the_piweek_july_2019">1.2. Status after the Piweek (July 2019)</h3>
+<div class="paragraph">
+<p>The conclusion is that now I have a deeper understanding on how the
+different parts are going to play together. Of course I have made
+several mistakes (a couple of booms included :P) but I&#8217;m confident I
+can do this with a little bit more time.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Every component is assembled and functional separately</p>
+</li>
+<li>
+<p>Only one power source</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_next_steps">1.3. Next steps</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Change standard battery solution to a Lithium based solution with a
+battery charger powered by the turbine while watering.</p>
+</li>
+<li>
+<p>Add autonomous timer</p>
+</li>
+<li>
+<p>Isolate the circuitery</p>
+</li>
+<li>
+<p>Box the whole solution</p>
+</li>
+<li>
+<p>Add bluetooth or wifi connectivity (depending on usage)</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -792,6 +885,19 @@ a relay in order to open/close it.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_references">4.3. References</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://robojax.com/learn/arduino/?vid=robojax-pushButton-on-off" class="bare">http://robojax.com/learn/arduino/?vid=robojax-pushButton-on-off</a></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/tutorial/button" class="bare">https://www.arduino.cc/en/tutorial/button</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -905,7 +1011,7 @@ of the Arduino.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_references">5.3. References</h3>
+<h3 id="_references_2">5.3. References</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1058,7 +1164,7 @@ breadboard to the Arduino ground pin.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_references_2">6.3. References</h3>
+<h3 id="_references_3">6.3. References</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1070,7 +1176,28 @@ breadboard to the Arduino ground pin.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lessons_learned">7. Lessons learned</h2>
+<h2 id="_assembly">7. Assembly</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_circuit">7.1. Circuit</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/assembly_friday_piweek_circuit.jpg" alt="assembly friday piweek circuit" width="400">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_piweek_draft">7.2. Piweek draft</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/assembly_friday_piweek_all.jpg" alt="assembly friday piweek all" width="500">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lessons_learned">8. Lessons learned</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This chapter is where I&#8217;m adding everything I&#8217;ve learned in the
@@ -1078,7 +1205,7 @@ process of building the project and doesn&#8217;t fit in any of the previous
 chapters.</p>
 </div>
 <div class="sect2">
-<h3 id="_adding_up_batteries_voltage">7.1. Adding up batteries voltage</h3>
+<h3 id="_adding_up_batteries_voltage">8.1. Adding up batteries voltage</h3>
 <div class="paragraph">
 <p>In this project I needed a power source of 12v, but I only had two
 battery sources of 9v and 3v. I needed to add them up, at least as a
@@ -1108,20 +1235,49 @@ enough from each other</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_serial">7.1.1. Serial</h4>
+<h4 id="_serial">8.1.1. Serial</h4>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_parallel">7.1.2. Parallel</h4>
+<h4 id="_parallel">8.1.2. Parallel</h4>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_voltage_divider">7.2. Voltage divider</h3>
+<h3 id="_capacitors">8.2. Capacitors</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Electrolitic capacitors do BOOM&#8230;&#8203; BIG TIME!</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/boom_capacitors.jpg" alt="boom capacitors" width="200">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_resistors_color_code">8.3. Resistors color code</h3>
+<div class="sect3">
+<h4 id="_references_4">8.3.1. References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.resistor-calculator.com/">Resistor calculator online</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_voltage_divider">8.4. Voltage divider</h3>
 <div class="paragraph">
 <p>When measuring voltage with your Arduino, you have to be careful not
 trying to measure voltages greater than 5v or you&#8217;ll ruin your analog
@@ -1141,9 +1297,12 @@ the schema:</p>
 <p>Check out the references for theory and more information.</p>
 </div>
 <div class="sect3">
-<h4 id="_references_3">7.2.1. References</h4>
+<h4 id="_references_5">8.4.1. References</h4>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Voltage_divider">Wikipedia</a></p>
+</li>
 <li>
 <p><a href="https://www.youtube.com/watch?v=G1I-fcQFvNE">Measuring voltage with Arduino (Youtube)</a></p>
 </li>
@@ -1153,18 +1312,56 @@ the schema:</p>
 <li>
 <p><a href="https://startingelectronics.org/articles/arduino/measuring-voltage-with-arduino/">Measuring DC voltage with Arduino</a></p>
 </li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=h09gROzcBCQ">DC Voltage Dividers Part 2: Example with Four Resistors in Series</a></p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fritzing_ide">7.3. Fritzing IDE</h3>
+<h3 id="_fritzing_ide">8.5. Fritzing IDE</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
 <div class="sect3">
-<h4 id="_parts_2">7.3.1. Parts</h4>
+<h4 id="_third_party_parts">8.5.1. Third party Parts</h4>
+<div class="paragraph">
+<p>TODO</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/adafruit/Fritzing-Library" class="bare">https://github.com/adafruit/Fritzing-Library</a></p>
+<p><a href="https://github.com/adafruit/Fritzing-Library">Third party parts</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_references_6">8.5.2. References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://fritzing.org/home/">Fritzing home page</a></p>
+</li>
+<li>
+<p><a href="https://github.com/adafruit/Fritzing-Library">Third party parts</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_voltage_regulator">8.6. Voltage regulator</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect3">
+<h4 id="_references_7">8.6.1. References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=9rE5YLrje9U">Voltage Regulator tutorial( L7805, L7809 &amp; L7812) (Youtube)</a></p>
 </li>
 </ul>
 </div>
@@ -1176,7 +1373,7 @@ the schema:</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2019-07-15 23:30:22 +0200
+Last updated 2019-07-19 10:32:53 +0200
 </div>
 </div>
 <script type="text/x-mathjax-config">
